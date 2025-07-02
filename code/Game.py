@@ -6,7 +6,7 @@ from code.Menu import Menu
 class Game:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.display.set_mode((600, 600))
         pygame.display.set_caption("Meu Jogo")
         self.clock = pygame.time.Clock()
         self.running = True
