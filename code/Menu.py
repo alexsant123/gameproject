@@ -7,6 +7,9 @@ from pygame.font import Font
 import pygame
 import os
 
+from code.const import COLOR, MENU_OPTION, WIN_WIDTH
+
+
 class Menu:
     def __init__(self, screen):
         self.screen = screen
@@ -21,25 +24,33 @@ class Menu:
         self.rect = self.image.get_rect()
 
     def run(self):
+        menu_option = 0
+
         running = True
         clock = pygame.time.Clock()
 
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    quit()          # encerra o loop
-
-            # Desenha o fundo do menu
+                   quit() # sair do loop principal
             self.screen.blit(self.image, (0, 0))
+            self.menu_text(50, "SPACE TRAVEL", COLOR, (600 // 2, 30))
 
-            # Aqui você pode desenhar textos, botões, etc.
+            for i in range(len(MENU_OPTION)):
+                if i == menu_option:
+                    self.menu_text(30, MENU_OPTION[i], COLOR, ((WIN_WIDTH / 2), 525 + 30 * i))
+                else:
+                    self.menu_text(30, MENU_OPTION[i], COLOR, ((WIN_WIDTH / 2), 525 + 30 * i))
+
+
+
+
+
 
             pygame.display.flip()
             clock.tick(60)
 
         pygame.quit()
-
-
 
 
 
