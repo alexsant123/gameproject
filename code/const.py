@@ -1,9 +1,8 @@
 COLOR = (95, 75, 139)
-
+COLOR2=(0, 0, 255)
 
 
 MENU_OPTION = ('NEW GAME ',
-               'SAVED GAME ',
                'EXIT')
 
 WIN_WIDTH = 576
